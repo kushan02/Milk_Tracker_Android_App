@@ -207,5 +207,17 @@
         </TableRow>
 
     </TableLayout>
+    
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="App Developed by Kushan Mehta"
+        android:gravity="right"
+        android:layout_alignParentRight="true"
+    android:textColor="@color/darkgray"
+        android:textSize="12dp"
+        />
 
 </RelativeLayout>
