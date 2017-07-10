@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button list = (Button) findViewById(R.id.stats);
         list.setOnClickListener(this);
-        Button graph = (Button) findViewById(R.id.graph);
-        list.setOnClickListener(this);
+    //    Button graph = (Button) findViewById(R.id.graph);
+     //   list.setOnClickListener(this);
         Button money = (Button) findViewById(R.id.money);
-        list.setOnClickListener(this);
+        money.setOnClickListener(this);
 
 
 
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.money:
 
-           Toast.makeText(this, "Money btn!", Toast.LENGTH_SHORT).show();
+        //   Toast.makeText(this, "Money btn!", Toast.LENGTH_SHORT).show();
 
                 Intent myIntentm = new Intent(MainActivity.this, Records.class);
                 myIntentm.putExtra("key", "money");

@@ -18,7 +18,7 @@ import java.util.List;
 public class DbHandler extends SQLiteOpenHelper {
 
 
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 10;
     private static final String DATABSAE_NAME = "milk_qty.db";
 
     private static final String TABLE_QTY = "milk";
@@ -290,6 +290,39 @@ public class DbHandler extends SQLiteOpenHelper {
         }
 
 
+    }
+
+
+    public void addListViewMoney(List<Movie> movieList, Movie movie,int rate) {
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        String query = "SELECT SUM(qty)*" + rate +" as \"cost\",month,year FROM milk GROUP BY month  ORDER BY _id desc";
+
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+
+        String date = "";
+        String qty;
+
+        if (c != null) {
+            if (c.moveToFirst()) {
+                do {
+                    qty = "\u20B9";
+                    qty = qty + c.getString(c.getColumnIndex("cost"));
+                    date = c.getString(c.getColumnIndex("month"));
+                    date = date + "/" + c.getString(c.getColumnIndex("year"));
+
+                    movie = new Movie(date, " - ", qty);
+                    movieList.add(movie);
+
+
+                } while (c.moveToNext());
+            }
+            db.close();
+
+
+        }
     }
 
 

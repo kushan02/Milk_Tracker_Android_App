@@ -19,7 +19,8 @@
             android:name=".Records"
             android:label="@string/title_activity_records"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mehta.kushan.milktracker.MainActivity" />
